@@ -40,3 +40,12 @@ body {
   font-size: 20px;
   font-weight: 400;
 }
+
+.item-paragraph {
+  display: inline;
+
+  margin-left: 10px;
+
+  font-size: 30px;
+  font-weight: 600;
+}

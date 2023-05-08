@@ -27,7 +27,7 @@ function onInput(event) {
           'Too many matches found. Please enter a more specific name.'
         );
       } else if (data.length >= 2 && data.length <= 10) {
-        const murcup = data
+        const marcup = data
           .map(country => {
             return `<li class="country-list-item">
                 <img src="${country.flags.svg}" alt="" width="50px"/>
@@ -35,20 +35,21 @@ function onInput(event) {
             </li>`;
           })
           .join('');
-        refs.countryList.insertAdjacentHTML('afterbegin', murcup);
+        refs.countryList.insertAdjacentHTML('afterbegin', marcup);
       } else {
-        const murcup = data
+        const marcup = data
           .map(country => {
+            const languages = Object.values(country.languages);
             return `
                 <img src="${country.flags.svg}" alt="" width="50px"/>
-                <p class="list-item-paragraph">${country.name.official}</p>
-                <p><b>Capital:</b>${country.capital}</p>
-                <p><b>Population:</b>${country.population}</p>
-                <p><b>Languages:</b>${country.languages}</p>
+                <p class="item-paragraph">${country.name.official}</p>
+                <p><b>Capital: </b>${country.capital}</p>
+                <p><b>Population: </b>${country.population}</p>
+                <p><b>Languages: </b>${languages}</p>
             `;
           })
           .join('');
-        refs.countryInfo.insertAdjacentHTML('afterbegin', murcup);
+        refs.countryInfo.insertAdjacentHTML('afterbegin', marcup);
       }
     })
     .catch(error => {
