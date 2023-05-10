@@ -29,7 +29,7 @@ function onInput(event) {
       }
     })
     .catch(error => {
-      error === '404'
+      error.status === '404'
         ? Notiflix.Notify.failure('Oops, there is no country with that name.')
         : Notiflix.Notify.failure(error.message);
     });
